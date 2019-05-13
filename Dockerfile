@@ -26,6 +26,9 @@ COPY RELEASE /
 COPY assets/ /assets/
 RUN /assets/setup
 
+# add fix sysctl
+COPY fix/sysctl.rb /opt/gitlab/embedded/cookbooks/package/resources/sysctl.rb
+
 # Allow to access embedded tools
 ENV PATH /opt/gitlab/embedded/bin:/opt/gitlab/bin:/assets:$PATH
 
